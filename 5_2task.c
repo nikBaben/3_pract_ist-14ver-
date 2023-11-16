@@ -28,22 +28,29 @@ void swap_sign_of_element(int **matrix,int row,int column){
     int index = 0;
     int *p;
     int flag = 0;
+    int stop = 0;
     for(int i = 0; i<row; i++){
         flag = string_correctness(matrix,row,column,i);
         if(flag)
         {
             for(int j =0; j<column; j++)
             {   
-                if((abs(matrix[i][j]) > max_char) && ((i != j) || (j!=row-i-1)))
+                if((abs(matrix[i][j]) > max_char) && ((i != j) && (j!=row-i-1)))
                 {
                     max_char =abs(matrix[i][j]);
                     p = &matrix[i][j];
                 }
+                if((abs(matrix[i][j]) > max_char)){
+                    stop = 1;
+                }
+ 
             }
+            if(!stop){
             *p = *p*(-1);
             max_char = INT_MIN;
+            }
+            stop = 0;
     }
-    printf("\n");
     }
 }
 
@@ -65,6 +72,7 @@ int main(){
         }
         p = init_dynamic_matrix(row,column,size_of_data);
         matrix = (int **) p;
+        printf("Заполните матрицу\n");
         add_int_elements_in_matrix(matrix,row,column);
         printf("\n Ваша матрица\n");
         output_int_matrix(matrix,row,column); 

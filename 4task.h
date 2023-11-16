@@ -15,7 +15,7 @@ void** init_dynamic_matrix(int row, int column, int size_of_data){
         printf("Память не выделена\n");
         return NULL;
     }
-    printf("Адрес блока начала указателей: %p\n",m);
+    //printf("Адрес блока начала указателей: %p\n",m);
     return  m;
 }
 
