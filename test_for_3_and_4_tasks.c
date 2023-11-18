@@ -28,7 +28,7 @@ int main(){
     /*void **p; // Указатель на матрицу
     int row = 2, column = 2;
     int size_data = 8; 
-    int numbers_after_dot = 3;
+    int numbers_after_dot = 2;
     p = init_dynamic_matrix(row,column,size_data); // Инициализируем матрицу*/
 
     // Вариант для типа double
@@ -36,7 +36,7 @@ int main(){
     /*double **ptr =(double**) p; 
     add_double_elements_in_matrix(ptr,row,column);
     output_double_matrix(ptr,row,column,numbers_after_dot);
-    clear_memmory_of_matrix(p,row,column);
+    clear_memmory_of_matrix(p,row);
     output_double_matrix(ptr,row,column,numbers_after_dot);*/
 
     // Варинат для типа int
